@@ -1,0 +1,38 @@
+@import "~bootstrap/scss/variables";
+@import "./variables";
+
+$theme-colors: (
+    (
+        "primary": $primary,
+        "secondary": $secondary,
+        "success": $success,
+        "info": $info,
+        "warning": $warning,
+        "danger": $danger,
+        "light": $light,
+        "dark": $dark
+    )
+);
+
+.btn.btn-primary,
+a.btn.btn-primary {
+    color: $white;
+}
+
+$enable-responsive-font-sizes: true;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: theme-color("dark");
+$link-decoration: none;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: none;
+
+// DONE CUSTOMISING VARIABLES
+@import "~bootstrap/scss/bootstrap";
+
+.navbar {
+    padding: 0;
+}

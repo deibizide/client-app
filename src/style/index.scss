@@ -1,0 +1,213 @@
+// import font
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
+// // import bootstrap
+@import 'animations';
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+@import './bootstrap_custom';
+
+// set the default size of the fonts for the REM units
+html {
+    font-size: 14px;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+a.strong {
+    font-weight: 600;
+}
+// each page will need to have margin-top due to the navbar
+.page {
+    margin-top: 57px;
+    min-height: 100vh;
+}
+
+.main__page {
+    background-image: url('/client-app/images/main__bg__blurred.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+
+    &:after {
+        content: '';
+        position: fixed; /* stretch a fixed position to the whole screen */
+        top: 0;
+        height: 100vh; /* fix for mobile browser address bar appearing disappearing */
+        left: 0;
+        right: 0;
+        z-index: -1; /* needed to keep in the background */
+        background: url('/client-app/images/main__bg__blurred.jpg') center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+
+.arrow {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: $primary;
+    width: 4rem;
+    height: 4rem;
+    display: block;
+    text-decoration: none;
+    border-radius: 50%;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 1030;
+    i {
+        font-size: 20px;
+        color: $white;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.error__page {
+    margin-top: 200px;
+}
+
+.hmi__link {
+    cursor: pointer;
+}
+
+.hmi__header {
+    padding-top: 2rem;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 15px;
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 9rem;
+        height: 1px;
+        bottom: -0.5rem;
+        left: 0;
+        border-bottom: 0.4rem solid $primary;
+    }
+}
+
+.hmi__form__container {
+    padding-top: 2rem;
+}
+
+.hmi__light__container {
+    background-color: $white;
+
+    &__item {
+        width: 18rem;
+    }
+
+    .card {
+        min-width: 22rem;
+    }
+}
+
+.hmi__dark__container {
+    background-color: $info;
+    // color: $white;
+}
+
+.hmi__transparent__container {
+    color: #363636;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.hmi__loader {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    i {
+        color: $primary;
+        position: absolute;
+        font-size: 4rem;
+        top: 55%;
+        left: 45%;
+    }
+}
+
+.hmi__payment__container {
+    background-color: $info;
+}
+
+.hmi__legal__container {
+    background-color: $info;
+}
+
+.hmi__animation__bounce-right {
+    -moz-animation: bounce-right 2s infinite;
+    -webkit-animation: bounce-right 2s infinite;
+    animation: bounce-right 2s infinite;
+}
+
+.button__spinner {
+    position: absolute;
+    right: 5px;
+    top: 8px;
+}
+
+.button--disabled {
+    &:hover {
+        border: 1px solid $light;
+    }
+}
+
+// MEDIA QUERIES
+@media (max-width: 767.98px) {
+    // .hmi__image__container {
+    //     background: url('images/main__bg__blurred_mobile.jpg') center center no-repeat;
+    // }
+
+    .main__page {
+        background-image: url('/client-app/images/main__bg__blurred_mobile.jpg');
+        background-attachment: fixed;
+        -webkit-background-size: 100%;
+        -moz-background-size: 100%;
+        -o-background-size: 100%;
+        background-size: 100%;
+        // -webkit-background-size: contain;
+        // -moz-background-size: contain;
+        // -o-background-size: contain;
+        // background-size: contain;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+        &:after {
+            content: '';
+            position: fixed; /* stretch a fixed position to the whole screen */
+            top: 0;
+            height: 100vh; /* fix for mobile browser address bar appearing disappearing */
+            left: 0;
+            right: 0;
+            z-index: -1; /* needed to keep in the background */
+            background: url('/client-app/images/main__bg__blurred_mobile.jpg') center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    }
+
+    .hmi__header__auth {
+        padding-top: 3.5rem;
+        margin-left: 2rem;
+    }
+}
